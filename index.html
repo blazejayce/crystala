@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Crystala 💙</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #dbefff, #f4faff);
+    overflow-x: hidden;
+    color: #2c3e50;
+}
+
+/* INTRO SCREEN */
+#intro {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #b6e0ff, #eaf6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 100;
+    transition: 1s ease;
+}
+
+#intro h1 {
+    font-size: 3em;
+    color: #ffffff;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    animation: fadeUp 2s ease;
+}
+
+#intro button {
+    margin-top: 30px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 40px;
+    background: white;
+    color: #4a90e2;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#intro button:hover {
+    transform: scale(1.1);
+}
+
+/* MAIN */
+#main {
+    display: none;
+    padding: 40px 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+/* GLASS CARD */
+.card {
+    max-width: 900px;
+    margin: auto;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+/* TITLE */
+.title {
+    font-size: 2.5em;
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+}
+
+/* IMAGES */
+.gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 280px;
+    border-radius: 20px;
+    transition: 0.4s;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.gallery img:hover {
+    transform: scale(1.08) rotate(1deg);
+}
+
+/* MESSAGE */
+.message {
+    margin-top: 30px;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 30px;
+    font-weight: bold;
+    color: #4a90e2;
+}
+
+/* FLOATING HEARTS */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    to {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="intro">
+    <h1>HAPPY 18TH BIRTHDAY BABY CRYSTALA 💙</h1>
+    <button onclick="start()">Tap to open your surprise</button>
+</div>
+
+<div id="main">
+    <div class="card">
+        <div class="title">Hi Baby 💙</div>
+        <div class="subtitle">I made this just for you.</div>
+
+```
+    <div class="gallery">
+        <img src="Image1.jpg">
+        <img src="Image2.jpg">
+    </div>
+
+    <div class="message">
+        Happy 18th birthday, my love.<br><br>
+
+        You’ve grown into someone so beautiful, not just outside but inside too.  
+        Being with you feels like home, like peace, like something I never want to lose.<br><br>
+
+        Every moment with you is something I’ll always treasure.  
+        You make everything feel lighter, happier, and more meaningful.<br><br>
+
+        I hope today reminds you how loved you are — not just by me, but by everyone lucky enough to know you.<br><br>
+
+        I’ll always be here for you, no matter what.  
+        I love you endlessly. 💙
+    </div>
+
+    <div class="footer">
+        — Blaze 💙
+    </div>
+</div>
+```
+
+</div>
+
+<script>
+function start() {
+    document.getElementById("intro").style.opacity = "0";
+    setTimeout(() => {
+        document.getElementById("intro").style.display = "none";
+        document.getElementById("main").style.display = "block";
+    }, 1000);
+
+    createHearts();
+}
+
+function createHearts() {
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💙";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 6000);
+    }, 300);
+}
+</script>
+
+</body>
+</html>
